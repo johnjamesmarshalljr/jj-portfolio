@@ -15,7 +15,7 @@ export default function ConnectorDiagram() {
       className="connector-diagram"
       viewBox="0 0 640 460"
       role="img"
-      aria-label="Diagram showing disparate platforms — Dentrix, Open Dental, Denticon, Eaglesoft, ATS, and EHR systems — connecting into a single platform layer"
+      aria-label="Diagram showing disparate systems — Dentrix, Open Dental, Denticon, Eaglesoft, ATS, and EHR systems — all connecting through a central point"
     >
       {nodes.map((node, i) => (
         <line
@@ -46,11 +46,8 @@ export default function ConnectorDiagram() {
 
       <g className="connector-center" style={{ animationDelay: '1.1s' }}>
         <circle cx={center.x} cy={center.y} r="34" />
-        <text x={center.x} y={center.y - 6} textAnchor="middle" className="center-label-top">
-          PLATFORM
-        </text>
-        <text x={center.x} y={center.y + 12} textAnchor="middle" className="center-label-bottom">
-          LAYER
+        <text x={center.x} y={center.y + 5} textAnchor="middle" className="center-label">
+          JJ
         </text>
       </g>
     </svg>

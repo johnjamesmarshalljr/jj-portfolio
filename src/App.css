@@ -206,9 +206,10 @@ main {
 }
 
 .connector-center text {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   fill: var(--accent);
 }
 
