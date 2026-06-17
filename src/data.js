@@ -24,6 +24,7 @@ export const pillars = [
 export const caseStudies = [
   {
     id: 'eligibility-ai',
+    tag: 'Shipped \u2014 DentalXChange',
     company: 'DentalXChange',
     period: 'Dec 2025 \u2014 Present',
     title: 'Eligibility AI: making benefit data trustworthy enough to act on',
@@ -40,6 +41,7 @@ export const caseStudies = [
   },
   {
     id: 'schema-agnostic-ats',
+    tag: 'Shipped \u2014 Radancy',
     company: 'Radancy',
     period: 'Feb 2023 \u2014 Dec 2025',
     title: 'From 100+ one-off integrations to one data layer',
@@ -56,6 +58,7 @@ export const caseStudies = [
   },
   {
     id: 'health-note-onboarding',
+    tag: 'Shipped \u2014 Health Note',
     company: 'Health Note',
     period: 'Feb 2022 \u2014 Feb 2023',
     title: 'Cutting time-to-revenue in half as founding PM',
@@ -69,6 +72,40 @@ export const caseStudies = [
       'I owned the roadmap for turning onboarding into a product surface instead of a services engagement. I designed and built a customer admin dashboard that could spin up a fully configured Health Note instance from a few lines of input \u2014 practice details, EHR type, and an email address \u2014 handling the HL7/FHIR connection setup that previously required an engineer to hand-configure for each of the platform\u2019s 500K+ patient base of health system clients.',
     impact:
       'Time-to-revenue dropped from 115 to 60 days, removing the single biggest bottleneck between a signed contract and recognized revenue \u2014 a structural contribution to the 28% year-over-year revenue growth during my time there.',
+  },
+  {
+    id: 'recovery-ai',
+    tag: 'Self-Initiated \u2014 In Progress',
+    company: 'DentalXChange',
+    period: '2026 \u2014 Proposed by me, in development',
+    title: 'Recovery AI: closing the loop Reconcile AI opens',
+    stat: 'In Dev',
+    statLabel: 'self-proposed product',
+    summary:
+      'A product I conceived, scoped, and am building the case for end to end: an auto-resubmission API that takes a flagged, denied claim out of Reconcile AI and turns it into a corrected, resubmitted one \u2014 without a human leaving the screen.',
+    problem:
+      'Reconcile AI\u2019s connector model \u2014 which I architected \u2014 matches EOBs and flags payment discrepancies and denials. But flagging isn\u2019t fixing. Once a claim is flagged, staff still have to manually diagnose the denial reason, correct the claim, and resubmit it to the payer outside the tool entirely. That manual handoff is exactly where the reconciliation-hour savings leak back out.',
+    approach:
+      'Nobody asked for this one \u2014 I saw the gap in the system I\u2019d already built and proposed Recovery AI on my own. It\u2019s a new capability layered directly on Reconcile AI: an API endpoint that takes a flagged claim, maps its denial reason to a correction template, and auto-resubmits it to the payer for the categories of denial that follow predictable patterns, with a review queue inside the Reconcile AI UI for everything else. I\u2019ve scoped the architecture and API contract and am building the business case to bring to engineering.',
+    impact:
+      'Still early, but the framing is direct: Reconcile AI was projected to cut manual reconciliation hours 60%+. Recovery AI targets the step right after \u2014 resubmission \u2014 which is where most of that recovered time currently goes straight back into staff workload.',
+  },
+  {
+    id: 'linkedu',
+    tag: 'Self-Directed Concept',
+    company: 'Independent product strategy',
+    period: 'Full strategy deck, built solo',
+    title: 'LinkedU: the job platform LinkedIn isn\u2019t building for new grads',
+    stat: '$1.59B',
+    statLabel: 'estimated TAM',
+    summary:
+      'A complete product strategy for a LinkedIn-branded mobile app built for the 96 million recent grads job-hunting worldwide \u2014 swipe-based matching, data-driven resume building, and a go-to-market built for where Gen Z actually spends time.',
+    problem:
+      'Recent grads are applying into a black hole: roughly 90% of their applications get no response, and only 2% lead to an interview \u2014 even when applicants meet 90%+ of the listed qualifications. Half don\u2019t feel prepared for the job search at all, and 88% say their university didn\u2019t prepare them for their career. Meanwhile only 17% of recent grads use LinkedIn for job search, despite it being the dominant professional network \u2014 a clear sign the product isn\u2019t built for them.',
+    approach:
+      'I designed LinkedU as a standalone product strategy from zero: a LinkedIn-branded experience aimed squarely at new grads, with jobs funneled in only if they\u2019re explicitly entry-level. The core loop is a gamified, swipe-based job matching interface paired with a data-driven profile builder that converts a user\u2019s skills and achievements into a resume recruiters actually respond to. I built out the full roadmap \u2014 premium recruiter chat, resume builder, mentorship, application tracking \u2014 scored each item on value versus effort, defined a monetization model (sponsored listings, premium employer filters, application credits), a go-to-market plan centered on TikTok/Instagram and university career centers, and a KPI framework for acquisition, retention, and time-to-hire.',
+    impact:
+      'Sized the opportunity at roughly $1.59B TAM, applying LinkedIn\u2019s reported ARPU to the 96M recent-grad segment of the 235M college graduates worldwide \u2014 with a phased roadmap prioritized by the same value-to-effort discipline that won Roadmap Team of the Year, applied here to a product built from a blank page.',
   },
 ];
 
@@ -118,3 +155,44 @@ export const contact = {
   linkedin: 'linkedin.com/in/jjmarshalljr',
   linkedinUrl: 'https://linkedin.com/in/jjmarshalljr',
 };
+
+export const socials = {
+  youtube: 'https://www.youtube.com/@jjgabbana',
+  tiktok: 'https://tiktok.com/@jj_gabbana',
+  facebook: 'https://www.facebook.com/jjgabbanagucci',
+};
+
+export const creative = [
+  {
+    tag: 'REACH',
+    stat: '100K+',
+    title: 'Followers across TikTok, Instagram & Facebook',
+    body: 'A media presence built from scratch, one ballroom video essay and clip breakdown at a time \u2014 same instinct as the connector work: take something dense and make it land for the audience in front of you.',
+    link: socials.tiktok,
+    linkLabel: 'TikTok \u2192',
+  },
+  {
+    tag: 'MUSIC',
+    stat: '20 yrs',
+    title: 'Grammy-nominated ballroom producer & DJ',
+    body: 'Two decades producing and DJing in ballroom \u2014 Godfather of House Gabbana, booked internationally, with a Digitakt-to-Ableton pipeline turning out new tracks for upcoming sets.',
+    link: socials.facebook,
+    linkLabel: 'Facebook \u2192',
+  },
+  {
+    tag: 'COMMUNITY',
+    stat: 'Global',
+    title: 'Building and leading ballroom culture worldwide',
+    body: 'As Godfather of House Gabbana, I judge, mentor, and build community across one of ballroom\u2019s most recognized houses \u2014 the same cross-functional, people-first leadership that shows up in how I run product.',
+    link: socials.youtube,
+    linkLabel: 'YouTube \u2192',
+  },
+  {
+    tag: 'PRODUCTION',
+    stat: 'Solo',
+    title: 'Video & photo editing \u2014 every asset, self-produced',
+    body: 'Every video essay, clip breakdown, and visual on this site and across my channels is shot, edited, and produced by me \u2014 from concept to final cut.',
+    link: socials.youtube,
+    linkLabel: 'Watch \u2192',
+  },
+];

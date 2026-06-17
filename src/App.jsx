@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ConnectorDiagram from './ConnectorDiagram';
-import { pillars, caseStudies, experience, contact } from './data';
+import { pillars, caseStudies, experience, contact, creative } from './data';
 import './App.css';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
           <nav className="nav-links" aria-label="Section navigation">
             <a href="#bring">What I Bring</a>
             <a href="#work">Work</a>
+            <a href="#beyond">Beyond Product</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -76,7 +77,10 @@ function App() {
                     aria-expanded={isOpen}
                   >
                     <div className="case-summary-text">
-                      <p className="case-meta">{cs.company} &middot; {cs.period}</p>
+                      <p className="case-meta">
+                        <span className="case-tag">{cs.tag}</span>
+                        {cs.company} &middot; {cs.period}
+                      </p>
                       <h3>{cs.title}</h3>
                       <p className="case-summary-body">{cs.summary}</p>
                     </div>
@@ -105,6 +109,26 @@ function App() {
                 </article>
               );
             })}
+          </div>
+        </section>
+
+        <section id="beyond" className="beyond">
+          <h2 className="section-heading">Beyond product</h2>
+          <p className="section-sub">
+            The same instinct that drives the integration work \u2014 take something dense, disconnected,
+            or overwhelming and make it click for the person in front of you \u2014 also built a media
+            presence, a ballroom house, and a production practice.
+          </p>
+          <div className="creative-grid">
+            {creative.map((item) => (
+              <a className="creative-card" href={item.link} target="_blank" rel="noreferrer" key={item.tag}>
+                <p className="creative-tag">{item.tag}</p>
+                <p className="creative-stat">{item.stat}</p>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <span className="creative-link">{item.linkLabel}</span>
+              </a>
+            ))}
           </div>
         </section>
 

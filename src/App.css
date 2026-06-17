@@ -305,6 +305,19 @@ main {
   padding: 28px;
 }
 
+.case-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 3px 8px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
 .case-meta {
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -370,6 +383,72 @@ main {
 .case-detail-block p:last-child {
   color: var(--text-muted);
   font-size: 0.92rem;
+}
+
+/* ---------- beyond product ---------- */
+.beyond {
+  padding: 64px 0;
+  border-top: 1px solid var(--line);
+}
+
+.creative-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.creative-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 28px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.creative-card:hover {
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.creative-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--pink);
+  margin-bottom: 14px;
+}
+
+.creative-stat {
+  font-family: var(--display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--pink);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.creative-card h3 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.creative-card p:not(.creative-tag) {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+.creative-link {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--blue);
+  margin-top: 18px;
 }
 
 /* ---------- experience timeline ---------- */
@@ -502,6 +581,10 @@ main {
   }
 
   .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .creative-grid {
     grid-template-columns: 1fr;
   }
 
