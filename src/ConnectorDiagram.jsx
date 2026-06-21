@@ -1,55 +1,38 @@
-const nodes = [
-  { id: 'dentrix', label: 'Dentrix', x: 90, y: 70 },
-  { id: 'opendental', label: 'Open Dental', x: 550, y: 70 },
-  { id: 'denticon', label: 'Denticon', x: 50, y: 230 },
-  { id: 'eaglesoft', label: 'Eaglesoft', x: 590, y: 230 },
-  { id: 'ats', label: 'ATS', x: 90, y: 390 },
-  { id: 'ehr', label: 'EHR / FHIR', x: 550, y: 390 },
+const lines = [
+  { text: '$ whoami', delay: 0.0, type: 'cmd' },
+  { text: 'jj_marshall — senior technical pm', delay: 0.35, type: 'out' },
+  { text: '', delay: 0.5, type: 'blank' },
+  { text: '$ git log --author=jj --oneline', delay: 0.65, type: 'cmd' },
+  { text: 'a3f9c1  ship eligibility-ai writeback', delay: 1.0, type: 'out' },
+  { text: 'e21bb4  re-architect ats data layer', delay: 1.25, type: 'out' },
+  { text: '9c44d0  build the-let-out (solo, full-stack)', delay: 1.5, type: 'out' },
+  { text: '', delay: 1.65, type: 'blank' },
+  { text: '$ cat ./stack.json', delay: 1.8, type: 'cmd' },
+  { text: '{ "build": "react/next/node", "ship": "roadmaps",', delay: 2.15, type: 'out' },
+  { text: '  "translate": "engineering <-> business" }', delay: 2.35, type: 'out' },
 ];
-
-const center = { x: 320, y: 230 };
 
 export default function ConnectorDiagram() {
   return (
-    <svg
-      className="connector-diagram"
-      viewBox="0 0 640 460"
-      role="img"
-      aria-label="Diagram showing disparate systems — Dentrix, Open Dental, Denticon, Eaglesoft, ATS, and EHR systems — all connecting through a central point"
-    >
-      {nodes.map((node, i) => (
-        <line
-          key={node.id}
-          className="connector-line"
-          x1={node.x}
-          y1={node.y}
-          x2={center.x}
-          y2={center.y}
-          style={{ animationDelay: `${0.15 * i}s` }}
-        />
-      ))}
-
-      {nodes.map((node, i) => (
-        <g key={node.id} className="connector-node" style={{ animationDelay: `${0.15 * i + 0.4}s` }}>
-          <circle cx={node.x} cy={node.y} r="7" />
-          <text
-            x={node.x}
-            y={node.y}
-            dx={node.x < center.x ? -14 : 14}
-            dy="4"
-            textAnchor={node.x < center.x ? 'end' : 'start'}
+    <div className="terminal-window" role="img" aria-label="Terminal window showing JJ Marshall's identity as a builder — git log of shipped work and a stack overview">
+      <div className="terminal-titlebar">
+        <span className="terminal-dot dot-red" />
+        <span className="terminal-dot dot-yellow" />
+        <span className="terminal-dot dot-green" />
+        <span className="terminal-title">jj@miami: ~/career</span>
+      </div>
+      <div className="terminal-body">
+        {lines.map((line, i) => (
+          <div
+            key={i}
+            className={`terminal-line line-${line.type}`}
+            style={{ animationDelay: `${line.delay}s` }}
           >
-            {node.label}
-          </text>
-        </g>
-      ))}
-
-      <g className="connector-center" style={{ animationDelay: '1.1s' }}>
-        <circle cx={center.x} cy={center.y} r="34" />
-        <text x={center.x} y={center.y + 5} textAnchor="middle" className="center-label">
-          JJ
-        </text>
-      </g>
-    </svg>
+            {line.type === 'blank' ? '\u00A0' : line.text}
+          </div>
+        ))}
+        <span className="terminal-cursor" style={{ animationDelay: '2.6s' }}>&#9608;</span>
+      </div>
+    </div>
   );
 }

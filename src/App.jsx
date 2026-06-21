@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import ConnectorDiagram from './ConnectorDiagram';
-import { pillars, caseStudies, experience, contact, creative } from './data';
+import { pillars, caseStudies, experience, contact, creative, essays } from './data';
 import './App.css';
 
 function App() {
   const [openCase, setOpenCase] = useState(caseStudies[0].id);
+  const [activeEssay, setActiveEssay] = useState(null);
 
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
             <a href="#bring">What I Bring</a>
             <a href="#work">Work</a>
             <a href="#beyond">Beyond Product</a>
+            <a href="#writing">Writing</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -62,8 +64,8 @@ function App() {
         <section id="work" className="case-studies">
           <h2 className="section-heading">Selected work</h2>
           <p className="section-sub">
-            Three platforms, three different breeds of integration problem. Expand a case study for
-            the full arc.
+            From a solo-built platform to enterprise integration architecture to products I pitched
+            myself. Expand a case study for the full arc.
           </p>
 
           <div className="case-list">
@@ -115,8 +117,8 @@ function App() {
         <section id="beyond" className="beyond">
           <h2 className="section-heading">Beyond product</h2>
           <p className="section-sub">
-            The same instinct that drives the integration work \u2014 take something dense, disconnected,
-            or overwhelming and make it click for the person in front of you \u2014 also built a media
+            The same instinct that drives the integration work &mdash; take something dense, disconnected,
+            or overwhelming and make it click for the person in front of you &mdash; also built a media
             presence, a ballroom house, and a production practice.
           </p>
           <div className="creative-grid">
@@ -128,6 +130,31 @@ function App() {
                 <p>{item.body}</p>
                 <span className="creative-link">{item.linkLabel}</span>
               </a>
+            ))}
+          </div>
+        </section>
+
+        <section id="writing" className="writing">
+          <h2 className="section-heading">Writing</h2>
+          <p className="section-sub">
+            Ten essays on product, leadership, and the work that matters &mdash; written across
+            February and March 2026.
+          </p>
+          <div className="essay-list">
+            {essays.map((essay) => (
+              <button
+                className="essay-row"
+                key={essay.id}
+                onClick={() => setActiveEssay(essay.id)}
+              >
+                <span className="essay-number">{essay.number}</span>
+                <span className="essay-row-text">
+                  <span className="essay-category">{essay.category} &middot; {essay.date}</span>
+                  <span className="essay-title">{essay.title}</span>
+                  <span className="essay-dek">{essay.dek}</span>
+                </span>
+                <span className="essay-arrow">&rarr;</span>
+              </button>
             ))}
           </div>
         </section>
@@ -167,6 +194,30 @@ function App() {
         </div>
         <p className="footer-copy">&copy; {new Date().getFullYear()} JJ Marshall &mdash; {contact.location}</p>
       </footer>
+
+      {activeEssay && (() => {
+        const essay = essays.find((e) => e.id === activeEssay);
+        if (!essay) return null;
+        return (
+          <div className="essay-overlay" role="dialog" aria-modal="true">
+            <div className="essay-overlay-inner">
+              <button className="essay-close" onClick={() => setActiveEssay(null)} aria-label="Close essay">
+                &times;
+              </button>
+              <p className="essay-overlay-meta">
+                ESSAY {essay.number} OF {String(essays.length).padStart(2, '0')} &middot; {essay.category} &middot; {essay.date}
+              </p>
+              <h2 className="essay-overlay-title">{essay.title}</h2>
+              <p className="essay-overlay-dek">{essay.dek}</p>
+              <div className="essay-overlay-body">
+                {essay.body.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </>
   );
 }
