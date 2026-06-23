@@ -29,7 +29,7 @@ function App() {
       <main id="top">
         <section className="hero">
           <div className="hero-text">
-            <p className="eyebrow">Systems Integration Architect &mdash; Technical Product Manager</p>
+            <p className="eyebrow">Systems Architect &mdash; Technical Product Manager</p>
             <h1>JJ Marshall</h1>
             <p className="hero-quote">
               &ldquo;I build the connective tissue between platforms that don&rsquo;t talk to each

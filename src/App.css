@@ -256,6 +256,10 @@ main {
   border: 1px solid var(--line);
 }
 
+.pillar-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .pillar-card {
   background: var(--bg);
   padding: 32px;

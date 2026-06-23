@@ -17,7 +17,7 @@ export const pillars = [
   {
     tag: 'BUILD',
     title: 'Still a Working Engineer',
-    body: 'I shipped production code at Regions Bank before product, and I still write and ship it today \u2014 The Let Out is a Next.js 14 / Supabase platform I built solo, full stack, not a prototype.',
+    body: 'I shipped production code at Regions Bank before moving into product, and I still build today \u2014 The Let Out is a Next.js 14 / Supabase platform I designed and built solo, full stack, not a prototype.',
   },
   {
     tag: 'EXECUTION',
@@ -27,23 +27,6 @@ export const pillars = [
 ];
 
 export const caseStudies = [
-  {
-    id: 'the-let-out',
-    tag: 'Built Solo \u2014 Live Product',
-    company: 'The Let Out',
-    period: '2026 \u2014 Designed, built & shipped solo',
-    title: 'The Let Out: the system of record ballroom never had',
-    stat: '100%',
-    statLabel: 'solo-built, full stack',
-    summary:
-      'A Next.js 14 / Supabase community platform built end-to-end by me \u2014 forum, houses, balls, results, lineages, calendar, and a live SoundCloud radio \u2014 designed to be the structural home Facebook groups and Instagram threads can\u2019t replace.',
-    problem:
-      'Ballroom\u2019s entire institutional memory \u2014 house lineages, ball results, who walked what category and won \u2014 lives scattered across Facebook groups, Instagram captions, and group chats. Nothing is structured, nothing is searchable, and nothing treats the culture\u2019s history as data worth preserving. As someone inside the culture as Godfather of House Gabbana, I felt that gap directly: there was no system of record, because no platform built for general social use was ever going to become one.',
-    approach:
-      'I designed and built The Let Out myself, full stack: Next.js 14 on the frontend, Supabase for auth, database, and storage. The data model treats houses, members, balls, and categories as structured, linked entities \u2014 not posts \u2014 so lineage and results become queryable history instead of scrollback. I shipped a forum, house profiles, a ball calendar, a results system, and House Gabbana Radio, a persistent SoundCloud-based audio bar, all myself \u2014 architecture, UI, and deployment. The visual direction (dark aubergine palette, ink/gold/magenta/violet) was built to feel like it belongs to the culture, not borrowed from a generic SaaS template.',
-    impact:
-      'The platform is functionally complete and live. The current focus is adoption \u2014 getting the community using it as the default record \u2014 not adding features, because the hard problem was never "can this be built," it was "does ballroom have a structural home yet." Now it does.',
-  },
   {
     id: 'eligibility-ai',
     tag: 'Shipped \u2014 DentalXChange',
@@ -94,6 +77,23 @@ export const caseStudies = [
       'I owned the roadmap for turning onboarding into a product surface instead of a services engagement. I designed and built a customer admin dashboard that could spin up a fully configured Health Note instance from a few lines of input \u2014 practice details, EHR type, and an email address \u2014 handling the HL7/FHIR connection setup that previously required an engineer to hand-configure for each of the platform\u2019s 500K+ patient base of health system clients.',
     impact:
       'Time-to-revenue dropped from 115 to 60 days, removing the single biggest bottleneck between a signed contract and recognized revenue \u2014 a structural contribution to the 28% year-over-year revenue growth during my time there.',
+  },
+  {
+    id: 'the-let-out',
+    tag: 'Built Solo \u2014 Live Product',
+    company: 'The Let Out',
+    period: '2026 \u2014 Designed, built & shipped solo',
+    title: 'The Let Out: the system of record ballroom never had',
+    stat: '100%',
+    statLabel: 'solo-built, full stack',
+    summary:
+      'A Next.js 14 / Supabase community platform built end-to-end by me \u2014 forum, houses, balls, results, lineages, calendar, and a live SoundCloud radio \u2014 designed to be the structural home Facebook groups and Instagram threads can\u2019t replace.',
+    problem:
+      'Ballroom\u2019s entire institutional memory \u2014 house lineages, ball results, who walked what category and won \u2014 lives scattered across Facebook groups, Instagram captions, and group chats. Nothing is structured, nothing is searchable, and nothing treats the culture\u2019s history as data worth preserving. As someone inside the culture as Godfather of House Gabbana, I felt that gap directly: there was no system of record, because no platform built for general social use was ever going to become one.',
+    approach:
+      'I designed and built The Let Out myself, full stack: Next.js 14 on the frontend, Supabase for auth, database, and storage. The data model treats houses, members, balls, and categories as structured, linked entities \u2014 not posts \u2014 so lineage and results become queryable history instead of scrollback. I shipped a forum, house profiles, a ball calendar, a results system, and House Gabbana Radio, a persistent SoundCloud-based audio bar, all myself \u2014 architecture, UI, and deployment. The visual direction (dark aubergine palette, ink/gold/magenta/violet) was built to feel like it belongs to the culture, not borrowed from a generic SaaS template.',
+    impact:
+      'The platform is functionally complete and live. The current focus is adoption \u2014 getting the community using it as the default record \u2014 not adding features, because the hard problem was never "can this be built," it was "does ballroom have a structural home yet." Now it does.',
   },
   {
     id: 'recovery-ai',
